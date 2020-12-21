@@ -216,9 +216,10 @@ def makeAlexNet(inputShape: Tuple[int], modelName: str ='') -> keras.Model:
     #Build Model
     AlexNet = Sequential(name=modelName)
 
+    AlexNet.add(tf.keras.layers.experimental.preprocessing.Resizing(height=224, width=224))
+    
     #1st Convolutional Layer
     AlexNet.add(Convolution2D(filters=96, input_shape=inputShape, kernel_size=(11,11), strides=(4,4), padding='same'))
-    AlexNet.add(tf.keras.layers.experimental.preprocessing.Resizing(height=224, width=224))
     AlexNet.add(BatchNormalization())
     AlexNet.add(Activation('relu'))
     AlexNet.add(MaxPooling2D(pool_size=(2,2), strides=(2,2), padding='same'))
