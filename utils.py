@@ -404,7 +404,7 @@ def makeSimpleDenseNet(inputShape: Tuple[int], modelName:str ='') -> keras.Model
     return keras.Model(inputs=inputs, outputs=outputs, name=modelName)
 
 #Helper Function: Create a simple ResNet
-def makeSimpleDenseNet(inputShape: Tuple[int], modelName:str ='') -> keras.Model:
+def makeSimpleResNet(inputShape: Tuple[int], modelName:str ='') -> keras.Model:
     """
     Source: https://www.tensorflow.org/guide/keras/functional#a_toy_resnet_model
     """
